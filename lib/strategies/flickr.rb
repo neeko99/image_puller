@@ -4,9 +4,7 @@ module Strategy
     require 'flickr/authenticator'
     require 'flickr/downloader'
 
-
     class << self
-
       def exec
         return puts 'Missing Requirements for Flickr Download please see documentation' unless has_requirements?
 
