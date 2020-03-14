@@ -7,10 +7,13 @@ module Flickr
 
     def get_tokens
       flickr = FlickRaw::Flickr.new(api_key: ENV['FLICKRAW_API_KEY'], shared_secret: ENV['FLICKRAW_SHARED_SECRET'])
-      auth_key = JSON.parse(File.read('authkey.json'))
 
-      flickr.access_token = auth_key['access_token']
-      flickr.access_secret = auth_key['secret']
+      if File.exist? 'authkey.json'
+        auth_key = JSON.parse(File.read('authkey.json'))
+
+        flickr.access_token = auth_key['access_token']
+        flickr.access_secret = auth_key['secret']
+      end
 
       begin
         flickr.test.login
