@@ -9,18 +9,13 @@ class ImagePuller
   require 'active_support/all'
   require 'puller_factory'
 
-  def initialize(settings_file_path = nil)
-    return unless settings_file_path && File.exist?(settings_file_path)
+  class << self
 
-    settings = JSON.parse(File.read(settings_file_path))
-    settings.each { |key, value| ENV[key] = value  }
-  end
+    SUPPORTED_PULLERS = ['flickr'].freeze
 
-  SUPPORTED_PULLERS = ['flickr']
+    def pull(file_path = nil)
+      return unless has_settings_file?(file_path)
 
-
-  def pull
-    begin
       system('clear') || system('cls')
 
       puts '*** Please select puller ***'
@@ -38,6 +33,19 @@ class ImagePuller
       puts "Sorry!! Unable find selected \n press any key to continue"
       gets
       retry
+    end
+
+    private
+
+    def has_settings_file?(settings_file_path)
+      unless settings_file_path && File.exist?(settings_file_path)
+        puts 'Invalid settings file'
+        return false
+      end
+
+      settings = JSON.parse(File.read(settings_file_path))
+      settings.each { |key, value| ENV[key] = value }
+      true
     end
   end
 end
