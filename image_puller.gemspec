@@ -1,5 +1,5 @@
 Gem::Specification.new do |spec|
-  spec.name          = 'ImagePuller'
+  spec.name          = 'image_puller'
   spec.version       =  '0.1.0'
   spec.authors       = ['Nick Longmore']
   spec.email         = ['neeko99@gmail.com']
