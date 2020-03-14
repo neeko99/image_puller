@@ -3,4 +3,4 @@
 require 'image_puller'
 puller = ImagePuller.new
 
-puller.get
+puller.pull

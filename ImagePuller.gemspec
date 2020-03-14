@@ -3,14 +3,11 @@ Gem::Specification.new do |spec|
   spec.version       =  '0.1.0'
   spec.authors       = ['Nick Longmore']
   spec.email         = ['neeko99@gmail.com']
-
+  spec.executables  << 'image_puller'
   spec.summary       = 'Pulls all images from Flickr under photostreams '
-  spec.description   = 'Image Puller.'
+  spec.description   = 'Image Puller'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
-
-
-  spec.metadata['homepage_uri'] = 'https://spec.homepage'
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
