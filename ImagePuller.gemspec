@@ -4,7 +4,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ['Nick Longmore']
   spec.email         = ['neeko99@gmail.com']
 
-  spec.summary       = 'Pulls images from flickr'
+  spec.summary       = 'Pulls all images from Flickr under photostreams '
   spec.description   = 'Image Puller.'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.3.0')
@@ -20,8 +20,10 @@ Gem::Specification.new do |spec|
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
   spec.require_paths = ['lib']
+  spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.2'
+  spec.add_dependency 'activesupport'
   spec.add_dependency 'dotenv-rails'
   spec.add_dependency 'flickraw'
-  spec.add_dependency 'pry-byebug'
+  spec.add_dependency 'ruby-progressbar'
 end

@@ -2,9 +2,7 @@ module Flickr
   class Authenticator
 
     def flickr
-      return @flickr if @flickr
-
-      @flickr = get_tokens
+      @flickr ||= get_tokens
     end
 
     def get_tokens
