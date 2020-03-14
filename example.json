@@ -1,0 +1,8 @@
+{
+  "FLICKR_API_KEY": "Flickr API",
+  "FLICKR_SHARED_SECRET": "Flickr secret",
+  "OUTPUT_PATH":  "path to export to",
+  "FLICKR_USER_ID": "https://www.flickr.com/services/api/explore/?method=flickr.people.getInfo under 'Your User ID'",
+  "PHOTO": "false",
+  "VIDEO": "true"
+}

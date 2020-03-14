@@ -1,0 +1,6 @@
+#!/usr/bin/env ruby
+
+require 'image_puller'
+
+puller = ImagePuller.new(ARGV[0])
+puller.pull
