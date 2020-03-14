@@ -18,8 +18,8 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.2'
-  spec.add_dependency 'activesupport'
-  spec.add_dependency 'dotenv-rails'
+  spec.add_dependency 'activesupport', '~> 5.2'
+  spec.add_dependency 'dotenv-rails',  '~> 2.7'
   spec.add_dependency 'flickraw'
-  spec.add_dependency 'ruby-progressbar'
+  spec.add_dependency 'ruby-progressbar', '~> 1.10'
 end
