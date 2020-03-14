@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    image_puller (0.1.0)
+    image_puller (0.2.0)
       activesupport (~> 5.2)
       flickraw
       ruby-progressbar (~> 1.10)
