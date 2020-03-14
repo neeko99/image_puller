@@ -12,12 +12,9 @@ class ImagePuller
   def initialize(settings_file_path = nil)
     return unless settings_file_path && File.exist?(settings_file_path)
 
-    binding.pry
     settings = JSON.parse(File.read(settings_file_path))
     settings.each { |key, value| ENV[key] = value  }
   end
-
-  Dotenv.load
 
   SUPPORTED_PULLERS = ['flickr']
 
