@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install image_puller $filepath
+    $ gem install image_puller
 
 ## Usage
 
@@ -25,7 +25,7 @@ Or install it yourself as:
 - Require API key and Secret via https://www.flickr.com/services/apps/create
 - Add settings into env variables (see Settings)
 
-Run image_puller and follow onscreen prompts
+Run `image_puller $filepath` in a command prompt and follow onscreen instructions
 
 ## Settings
 
