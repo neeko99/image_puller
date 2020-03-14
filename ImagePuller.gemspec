@@ -3,7 +3,6 @@ Gem::Specification.new do |spec|
   spec.version       =  '0.1.0'
   spec.authors       = ['Nick Longmore']
   spec.email         = ['neeko99@gmail.com']
-  spec.executables  << 'image_puller'
   spec.summary       = 'Pulls all images from Flickr under photostreams '
   spec.description   = 'Image Puller'
   spec.license       = 'MIT'
@@ -16,6 +15,7 @@ Gem::Specification.new do |spec|
   end
   spec.bindir        = 'exe'
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
+  spec.executables  << 'bin/image_puller'
   spec.require_paths = ['lib']
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.2'
