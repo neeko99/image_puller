@@ -44,14 +44,31 @@ module Flickr
       album_title = photoset_details.dig('set', 0, 'title') || 'misc'
 
       info = @flickr.photos.getInfo(photo_id: id)
-      url_download(FlickRaw.url_o(info), album_title.parameterize)
+
+      filename = "#{info['title']}.#{info['originalformat']}"
+
+      case info['media']
+      when 'photo'
+        return unless ENV['PHOTO'] == 'true'
+
+        url = FlickRaw.url_o(info)
+      when 'video'
+        return unless ENV['VIDEO'] == 'true'
+        return unless original_video = @flickr.photos.getSizes(photo_id: id).detect{ |size| size['label'] == 'Video Original' }
+
+        url = original_video['source']
+      end
+
+      return unless url
+
+      url_download(url, album_title, filename)
+
     end
 
-    def url_download(url, title)
+    def url_download(url, album_title, filename)
       retry_count ||= 0
       open(url) do |image|
-        filename = url.split('/')[-1]
-        path = "#{ENV['OUTPUT_PATH']}/#{title}/#{filename}"
+        path = "#{ENV['OUTPUT_PATH']}/#{album_title}/#{filename}"
 
         FileUtils.mkdir_p(File.dirname(path))
         open(path, 'wb') { |file| file.write(image.read) }
