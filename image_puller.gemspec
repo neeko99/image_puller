@@ -14,8 +14,8 @@ Gem::Specification.new do |spec|
     `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   end
   spec.bindir        = 'exe'
-  # spec.executables  << './ImagePuller/bin/image_puller.rb'
   spec.require_paths = ['lib']
+  spec.executables << 'image_puller'
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_dependency 'activesupport', '~> 5.2'
