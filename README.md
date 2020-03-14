@@ -17,7 +17,7 @@ And then execute:
 
 Or install it yourself as:
 
-    $ gem install image_puller
+    $ gem install image_puller $filepath
 
 ## Usage
 
@@ -31,12 +31,17 @@ Run image_puller and follow onscreen prompts
 
 # Flickr Specific Settings
 
-- ENV['FLICKRAW_API_KEY'] = Flickr API
-- ENV['FLICKRAW_SHARED_SECRET'] = Flickr secret
-- ENV['OUTPUT_PATH'] = local path to export to
-- ENV['FLICKR_USER_ID'] = https://www.flickr.com/services/api/explore/?method=flickr.people.getInfo under 'Your User ID'
-- ENV['PHOTO'] = ('true'/'false')
-- ENV['VIDEO'] = ('true'/'false')
+Example settings file
+```json
+{
+  "FLICKR_API_KEY": "Flickr API",
+  "FLICKR_SHARED_SECRET": "Flickr secret",
+  "OUTPUT_PATH":  "path to export to",
+  "FLICKR_USER_ID": "https://www.flickr.com/services/api/explore/?method=flickr.people.getInfo under 'Your User ID'",
+  "PHOTO": "false",
+  "VIDEO": "true"
+}
+```
 
 ## Contributing
 
