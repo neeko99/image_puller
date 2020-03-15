@@ -8,7 +8,7 @@ module Flickr
     MAX_RETRIES = 10
 
     def download
-      page = 0
+      page = ENV['FLICKR_STARTING_PAGE'].to_i
       per_page = 100
 
       loop do
@@ -32,7 +32,7 @@ module Flickr
           retry unless retry_count == MAX_RETRIES
         end
 
-        break if images.size < per_page
+        break if images.nil? || images.size < per_page
       end
     end
 
@@ -77,7 +77,7 @@ module Flickr
       puts "cannot download #{url} error: #{e.message}" if retry_count.zero?
 
       retry_count += 1
-      puts "Retry retry #{retry_count}/#{MAX_RETRIES}"
+      puts "Retry  #{retry_count}/#{MAX_RETRIES}"
       retry unless retry_count == MAX_RETRIES
     end
   end

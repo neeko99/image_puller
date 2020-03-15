@@ -40,7 +40,8 @@ Example settings file
   "FLICKR_USER_ID": "https://www.flickr.com/services/api/explore/?method=flickr.people.getInfo under 'Your User ID'",
   "PHOTO": "false",
   "VIDEO": "true",
-  "PULLER_TYPE": "flickr"
+  "PULLER_TYPE": "flickr",
+  "FLICKR_STARTING_PAGE": 0
 }
 ```
 
