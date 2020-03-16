@@ -29,7 +29,7 @@ class ImagePuller
       end
 
       settings = JSON.parse(File.read(settings_file_path))
-      settings.each { |key, value| ENV[key] = value }
+      settings.each { |key, value| ENV[key] = value.to_s }
 
       true
     end

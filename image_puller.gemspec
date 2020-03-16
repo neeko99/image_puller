@@ -1,6 +1,6 @@
 Gem::Specification.new do |spec|
   spec.name          = 'image_puller'
-  spec.version       =  '0.2.0'
+  spec.version       =  '0.2.1'
   spec.authors       = ['Nick Longmore']
   spec.email         = ['neeko99@gmail.com']
   spec.summary       = 'Pulls all images from Flickr under photostreams '
