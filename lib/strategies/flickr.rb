@@ -8,8 +8,8 @@ module Strategy
       def exec
         return puts 'Missing Requirements for Flickr Download please see documentation' unless has_requirements?
 
-        auth = ::Flickr::Authenticator.new
-        downloader = ::Flickr::Downloader.new(auth.flickr)
+        auth = ::Flickr::Authenticator.authenticate
+        downloader = ::Flickr::Downloader.new(auth)
 
         downloader.download
       end
