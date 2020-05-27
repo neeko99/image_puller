@@ -18,7 +18,7 @@ Gem::Specification.new do |spec|
   spec.executables << 'image_puller'
   spec.add_development_dependency 'pry-byebug'
   spec.add_development_dependency 'rspec', '~> 3.2'
-  spec.add_dependency 'activesupport', '~> 5.2'
+  spec.add_dependency 'activesupport', '>= 5.2', '< 7.0'
   spec.add_dependency 'flickraw'
   spec.add_dependency 'ruby-progressbar', '~> 1.10'
 end
